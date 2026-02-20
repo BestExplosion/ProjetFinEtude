@@ -50,7 +50,7 @@ body {
 }
 
 .text h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 15px;
 }
 
@@ -58,6 +58,7 @@ body {
   max-width: 400px;
   margin: 0 auto;
   line-height: 1.6;
+   font-size: 1.5rem;
   color: rgba(93, 64, 55, 1);;
 }
 
@@ -130,6 +131,24 @@ body {
 /* MONTRER TEXTE */
 .nav-item .dot.active ~ .nav-text {
   opacity: 1;
+}
+
+footer {
+  height: 100vh;               
+  scroll-snap-align: start;    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 243, 214, 1); 
+  color: rgba(93, 64, 55, 1);
+  font-size: 2rem;
+  text-align: center;
+}
+footer p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: rgba(93, 64, 55, 1);
 }
 
 /* MOBILE */
