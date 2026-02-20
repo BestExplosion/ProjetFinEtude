@@ -1,0 +1,151 @@
+/* SNAP SCROLL */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "MorrisRomanBlack";
+  color: rgba(93, 64, 55, 1);
+  overflow-y: scroll;
+  background: rgba(255, 243, 214, 1);
+}
+
+/* FULLSCREEN SECTIONS */
+#intro,
+.work {
+  height: 100vh;
+  scroll-snap-align: start;
+  background: rgba(255, 243, 214, 1);
+}
+
+/* INTRO */
+#intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#introText {
+  font-size: 3rem;
+  animation: fade 3s ease forwards;
+}
+
+/* SECTIONS */
+.work {
+  display: flex;
+  align-items: center;
+  padding: 80px;
+  gap: 50px;
+}
+
+.work.reverse {
+  flex-direction: row-reverse;
+}
+
+/* TEXTES */
+.text {
+  flex: 1;
+  text-align: center;
+}
+
+.text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.text p {
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: rgba(93, 64, 55, 1);;
+}
+
+/* IMAGE */
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+#dotNav {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; 
+  position: relative;
+}
+
+/* DOT */
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(184, 134, 11, 1);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+  transform-origin: center;
+}
+
+/* ACTIVE DIAMOND */
+.dot.active {
+  background: rgba(139, 0, 0, 1);
+  border-radius: 0;
+  transform: rotate(45deg) scale(2); 
+}
+/* LIGNE */
+.ligne {
+  width: 2px;
+  height: 30px; 
+  background:  rgba(184, 134, 11, 1);
+}
+
+/* NAV TEXT */
+.nav-text {
+  position: absolute;
+  right: 70px; 
+  color: rgba(139, 0, 0, 1);
+  font-size: 1rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* MONTRER TEXTE */
+.nav-item .dot.active ~ .nav-text {
+  opacity: 1;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  #dotNav {
+    display: none;
+  }
+}
+
+/* TEST TEXT  */
+@keyframes fade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@font-face {
+  font-family: "MorrisRomanBlack";
+  src: url("fonts/MorrisRoman-Black.ttf") format("truetype");
+} 
