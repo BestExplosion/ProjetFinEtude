@@ -11,9 +11,9 @@ body {
   background: rgba(255, 243, 214, 1);
 }
 
-/* FULLSCREEN SECTIONS */
+/* PLEIN ÉCRAN SECTIONS */
 #intro,
-.work {
+.section {
   height: 100vh;
   scroll-snap-align: start;
   background: rgba(255, 243, 214, 1);
@@ -32,14 +32,14 @@ body {
 }
 
 /* SECTIONS */
-.work {
+.section {
   display: flex;
   align-items: center;
   padding: 80px;
   gap: 50px;
 }
 
-.work.reverse {
+.section.reverse {
   flex-direction: row-reverse;
 }
 
@@ -75,7 +75,7 @@ body {
   border-radius: 10px;
 }
 
-#dotNav {
+#pointNav {
   position: fixed;
   right: 40px;
   top: 50%;
@@ -94,8 +94,8 @@ body {
   position: relative;
 }
 
-/* DOT */
-.dot {
+/* POINT NAV */
+.point {
   width: 12px;
   height: 12px;
   background: rgba(184, 134, 11, 1);
@@ -104,8 +104,8 @@ body {
   transform-origin: center;
 }
 
-/* ACTIVE DIAMOND */
-.dot.active {
+/* DIAMENt ACTIVE */
+.point.active {
   background: rgba(139, 0, 0, 1);
   border-radius: 0;
   transform: rotate(45deg) scale(2); 
@@ -153,7 +153,7 @@ footer p {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  #dotNav {
+  #pointNav {
     display: none;
   }
 }

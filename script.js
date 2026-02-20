@@ -1,10 +1,12 @@
-const sections = document.querySelectorAll("section");
-const dots = document.querySelectorAll(".dot");
+// On sélectionne  les sections ou le footer
+const sections = document.querySelectorAll("section, footer");
+const points = document.querySelectorAll(".point");
 const navTexts = document.querySelectorAll(".nav-text");
 
 /* CLICK */
-dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
+//Scroll vers la section correspondante
+points.forEach((point, i) => {
+  point.addEventListener("click", () => {
     setActive(i);
     sections[i].scrollIntoView({ behavior: "smooth" });
   });
@@ -22,11 +24,12 @@ window.addEventListener("scroll", () => {
 
   setActive(current);
 });
-
+/* setActive */
 function setActive(index) {
-  dots.forEach(d => d.classList.remove("active"));
+  // Supprimer 'active' de tous les points et textes
+  points.forEach(d => d.classList.remove("active"));
   navTexts.forEach(t => t.classList.remove("active"));
-
-  dots[index].classList.add("active");
+  // Ajouter 'active' au point et texte courant
+  points[index].classList.add("active");
   navTexts[index].classList.add("active");
 }
