@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="normalize.css">
 </head>
 <body>
-
+  
 <!-- NAVIGATION DROITE DE L'ÉCRAN -->
 <nav id="pointNav">
   <div class="nav-item">
@@ -54,13 +54,18 @@
 
 <!-- INTRO -->
 <section id="intro">
-  <h1 id="introText">ESPACE VIDÉO</h1>
+   <!-- Vidéo d'introduction -->
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="intro.mp4" type="video/mp4">
+  </video>
+</section>
+
 </section>
 <!-- SECTION PEUT Y EN AJOUTER AU BESOIN -->
 <section class="section">
   <div class="text">
-    <h2>Point 1</h2>
-    <p>Description.</p>
+    <h2>Objectif Initial</h2>
+    <p>Mon objectif était d'apprendre les bases de l'art numérique et de l'animation. Dans ce cas précis, l'animation sur Blender avec Krita comme outil de scénarimage.</p>
   </div>
   <div class="image">
     <img src="https://placehold.co/600x400/png">
@@ -69,7 +74,7 @@
 
 <section class="section reverse">
   <div class="text">
-    <h2>Point 2</h2>
+    <h2>Concept</h2>
     <p>Description.</p>
   </div>
   <div class="image">
@@ -113,6 +118,7 @@
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 
 </html>

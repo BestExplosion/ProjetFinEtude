@@ -1,35 +1,96 @@
-// On sélectionne  les sections ou le footer
-const sections = document.querySelectorAll("section, footer");
-const points = document.querySelectorAll(".point");
-const navTexts = document.querySelectorAll(".nav-text");
+// attendre que le DOM soit entièrement chargé
+document.addEventListener("DOMContentLoaded", () => {
 
-/* CLICK */
-//Scroll vers la section correspondante
-points.forEach((point, i) => {
-  point.addEventListener("click", () => {
-    setActive(i);
-    sections[i].scrollIntoView({ behavior: "smooth" });
+  // ----------------------
+  // SÉLECTION DES ÉLÉMENTS
+  // ----------------------
+  const sections = document.querySelectorAll("section, footer"); // toutes les sections et le footer
+  const points = document.querySelectorAll(".point");           // les points de navigation
+  const navTexts = document.querySelectorAll(".nav-text");      // les textes associés
+
+  // ----------------------
+  // NAVIGATION PAR CLIC
+  // ----------------------
+  points.forEach((point, i) => {
+    point.addEventListener("click", () => {
+      setActive(i); // mettre à jour le point actif
+      sections[i].scrollIntoView({ behavior: "smooth" }); // scroll vers la section
+    });
   });
-});
 
-/* SCROLL SYNC */
+  // ----------------------
+  // SYNCHRO DES POINTS AU SCROLL
+  // ----------------------
+  window.addEventListener("scroll", () => {
+    let current = 0;
+
+    sections.forEach((sec, i) => {
+      if (window.scrollY >= sec.offsetTop - 200) { // ajuster si nécessaire
+        current = i;
+      }
+    });
+
+    setActive(current); // mettre à jour le point actif
+  });
+
+  // ----------------------
+  // FONCTION POUR METTRE À JOUR LES POINTS
+  // ----------------------
+  function setActive(index) {
+    points.forEach(d => d.classList.remove("active"));
+    navTexts.forEach(t => t.classList.remove("active"));
+
+    points[index].classList.add("active");
+    navTexts[index].classList.add("active");
+  }
+
+  // ----------------------
+  // VIDÉO D'INTRO
+  // ----------------------
+  const introVideo = document.getElementById("introVideo");
+  const firstSection = document.querySelector(".section");
+
+  // s'assurer que la vidéo est bien muette pour autoplay
+  introVideo.muted = true;
+  introVideo.play().catch(() => {
+    console.log("Autoplay bloqué par le navigateur");
+  });
+
+  // quand la vidéo se termine, scroll automatique vers la première section
+  introVideo.addEventListener("ended", () => {
+    firstSection.scrollIntoView({ behavior: "smooth" });
+  });
+
+const nav = document.getElementById("pointNav");
+const intro = document.getElementById("intro");
+
 window.addEventListener("scroll", () => {
-  let current = 0;
-
-  sections.forEach((sec, i) => {
-    if (scrollY >= sec.offsetTop - 200) {
-      current = i;
-    }
-  });
-
-  setActive(current);
+  // si on a scrollé au-delà de la vidéo
+  if (window.scrollY > intro.offsetHeight * 0.1) { // 10% de la hauteur vidéo
+    nav.classList.add("visible");
+  } else {
+    nav.classList.remove("visible");
+  }
 });
-/* setActive */
-function setActive(index) {
-  // Supprimer 'active' de tous les points et textes
-  points.forEach(d => d.classList.remove("active"));
-  navTexts.forEach(t => t.classList.remove("active"));
-  // Ajouter 'active' au point et texte courant
-  points[index].classList.add("active");
-  navTexts[index].classList.add("active");
-}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    } else {
+      entry.target.classList.remove("visible");
+    }
+
+  });
+}, {
+  threshold: 0.4
+});
+
+document.querySelectorAll(".section").forEach(section => {
+  if (section.id !== "intro") {
+    observer.observe(section);
+  }
+});
+
+});
