@@ -73,6 +73,9 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// --------------------------
+// CHANGEMENT DE SECTIONS
+// --------------------------
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
 

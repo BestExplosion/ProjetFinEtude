@@ -14,7 +14,7 @@ footer {
   
 }
 
-/* subtle diagonal pattern */
+/*motif diagonal */
 footer::before {
   content: '';
   position: absolute;

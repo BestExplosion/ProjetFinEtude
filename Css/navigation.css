@@ -69,7 +69,7 @@
 }
 
 /* MONTRER TEXTE */
-.nav-item .dot.active ~ .nav-text {
+.nav-item .point.active ~ .nav-text {
   opacity: 1;
 }
 
