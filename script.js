@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navTexts = document.querySelectorAll(".nav-text");      // les textes associés
 
   // ----------------------
-  // NAVIGATION PAR CLIC
+  // NAVIGATION PAR CLICK
   // ----------------------
   points.forEach((point, i) => {
     point.addEventListener("click", () => {
