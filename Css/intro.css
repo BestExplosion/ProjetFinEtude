@@ -1,0 +1,46 @@
+/* PLEIN ÉCRAN SECTIONS */
+#intro,
+.section {
+  height: 100vh;
+  scroll-snap-align: center;
+  background: rgba(255, 243, 214, 1);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#intro {
+  position: relative;
+  width: 100%;           
+   max-width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;      
+  opacity: 1;
+  transform: none;
+  background: #000; 
+}
+
+#introVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: opacity 1s ease; 
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+  #introVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

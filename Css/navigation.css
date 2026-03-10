@@ -1,0 +1,81 @@
+#pointNav {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#pointNav.visible{
+  opacity: 1;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; 
+  position: relative;
+}
+
+/* POINT NAV */
+.point {
+  width: 12px;
+  height: 12px;
+  background: rgba(184, 134, 11, 1);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.point:hover {
+  background: rgba(212, 168, 67, 1);
+  transform: scale(1.4);
+}
+
+/* DIAMENt ACTIVE */
+.point.active {
+  background: rgba(139, 0, 0, 1);
+  border-radius: 0;
+  transform: rotate(45deg) scale(2); 
+  box-shadow: 0 0 8px rgba(139, 0, 0, 0.4);
+}
+/* LIGNE */
+.ligne {
+  width: 2px;
+  height: 30px; 
+  background:linear-gradient(to top, rgba(184, 134, 11, 1), transparent);
+}
+
+/* NAV TEXT */
+.nav-text {
+  position: absolute;
+  right: 70px; 
+  color: rgba(139, 0, 0, 1);
+  font-size: 1rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-text.active {
+  opacity: 1;
+}
+
+/* MONTRER TEXTE */
+.nav-item .dot.active ~ .nav-text {
+  opacity: 1;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+  #pointNav {
+    display: none;
+  }
+}
