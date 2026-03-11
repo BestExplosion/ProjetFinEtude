@@ -8,7 +8,9 @@ html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
-
+/*---------------------------------*/
+/* BODY */
+/*---------------------------------*/
 body {
   font-family: "MorrisRomanBlack";
   color: rgba(93, 64, 55, 1);
@@ -16,12 +18,13 @@ body {
   background: rgba(255, 243, 214, 1);
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cg transform='rotate(15%2C 12%2C 12)'%3E%3Crect x='11' y='2' width='2' height='12' fill='%23c0c0c0'/%3E%3Crect x='8' y='12' width='8' height='2' fill='%238b0000'/%3E%3Crect x='10' y='14' width='4' height='6' fill='%238b5a2b'/%3E%3C/g%3E%3C/svg%3E") 24 4, auto;
 }
-
+/*---------------------------------*/
 /* SECTIONS */
+/*---------------------------------*/
 .section {
   display: flex;
   align-items: center;
-  padding: 40px 300px;
+  padding: 40px 200px;
   gap: 20px;
   position: relative;
   overflow: hidden;
@@ -57,8 +60,9 @@ body {
 .section.reverse {
   flex-direction: row-reverse;
 }
-
+/*---------------------------------*/
 /* TEXTES */
+/*---------------------------------*/
 .text {
   flex: 1;
   text-align: center;
@@ -84,16 +88,17 @@ body {
   max-width: 400px;
   margin: 0 auto;
   line-height: 1.6;
-   font-size: 1.5rem;
+  font-size: 1.5rem;
   color: rgba(93, 64, 55, 1);
   font-family: "Lora", serif;
 }
-
+/*---------------------------------*/
 /* IMAGE */
+/*---------------------------------*/
 .image {
   flex: 1 1 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 10px;
