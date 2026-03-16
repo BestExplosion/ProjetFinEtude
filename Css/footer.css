@@ -27,6 +27,7 @@ footer::before {
     rgba(184, 134, 11, 0.04) 21px
   );
   pointer-events: none;
+  z-index: 0;
 }
 
 footer p {

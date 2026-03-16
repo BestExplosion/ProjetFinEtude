@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----------------------
   const sections = document.querySelectorAll("section, footer"); // toutes les sections et le footer
   const points = document.querySelectorAll(".point");           // les points de navigation
-  const navTexts = document.querySelectorAll(".nav-text");      // les textes associés
+  const navTexts = document.querySelectorAll(".nav-texte");      // les textes associés
 
   // ----------------------
   // NAVIGATION PAR CLICK
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   points.forEach((point, i) => {
     point.addEventListener("click", () => {
       setActive(i); // mettre à jour le point actif
-      sections[i].scrollIntoView({ behavior: "smooth" }); // scroll vers la section
+      sections[i].scrollIntoView({ behavior: "smooth" }); // défilement vers la section
     });
   });
 
@@ -65,7 +65,7 @@ const nav = document.getElementById("pointNav");
 const intro = document.getElementById("intro");
 
 window.addEventListener("scroll", () => {
-  // si on a scrollé au-delà de la vidéo
+  // si on a scrollé au-delà de la vidéo cache la navigation
   if (window.scrollY > intro.offsetHeight * 0.1) { // 10% de la hauteur vidéo
     nav.classList.add("visible");
   } else {

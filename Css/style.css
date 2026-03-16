@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
 @font-face {
   font-family: "MorrisRomanBlack";
-  src: url("Fonts/MorrisRoman-Black.ttf") format("truetype");
+  src: url("../Fonts/MorrisRoman-Black.ttf") format("truetype");
 } 
 /* SNAP SCROLL */
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
+
 /*---------------------------------*/
 /* BODY */
 /*---------------------------------*/
 body {
-  font-family: "MorrisRomanBlack";
+  font-family: "MorrisRomanBlack", serif;
   color: rgba(93, 64, 55, 1);
-  overflow-y: scroll;
   background: rgba(255, 243, 214, 1);
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cg transform='rotate(15%2C 12%2C 12)'%3E%3Crect x='11' y='2' width='2' height='12' fill='%23c0c0c0'/%3E%3Crect x='8' y='12' width='8' height='2' fill='%238b0000'/%3E%3Crect x='10' y='14' width='4' height='6' fill='%238b5a2b'/%3E%3C/g%3E%3C/svg%3E") 24 4, auto;
+ cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E%F0%9F%97%A1%EF%B8%8F%3C/text%3E%3C/svg%3E") 0 32, auto;
 }
 /*---------------------------------*/
 /* SECTIONS */
@@ -103,7 +104,6 @@ body {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  flex: 1 1 0;
   min-height: 0;
 }
 .image img {
@@ -122,19 +122,12 @@ body {
     width: 100%;
     height: auto;
     max-width: 500px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
-
-
-.image a{
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-/* TABLET LAYOUT */
+/* TABLET*/
 @media (max-width: 1200px) {
 
   .section {
@@ -143,7 +136,7 @@ body {
   }
 
   .text h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
 
   .text p {
@@ -157,7 +150,7 @@ body {
 
 }
 
-/* MOBILE LAYOUT */
+/* MOBILE*/
 @media (max-width: 768px) {
   #introVideo {
     width: 100%;
@@ -174,6 +167,7 @@ body {
   .text {
     order: -1; 
     text-align: center;
+    margin-top: 50px;
   }
 
   .image {

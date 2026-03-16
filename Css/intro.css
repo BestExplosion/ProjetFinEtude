@@ -1,4 +1,4 @@
-/* PLEIN ÉCRAN SECTIONS */
+/*SECTIONS EN PLEIN ÉCRAN */
 #intro,
 .section {
   height: 100vh;
@@ -17,7 +17,6 @@
 #intro {
   position: relative;
   width: 100%;           
-   max-width: 100vw;
   height: 100dvh;
   overflow: hidden;      
   opacity: 1;
@@ -36,7 +35,7 @@
   transition: opacity 1s ease; 
 }
 
-/* MOBILE LAYOUT */
+/* MISE EN PAGE MOBILE */
 @media (max-width: 1200px) {
   #introVideo {
     width: 100%;

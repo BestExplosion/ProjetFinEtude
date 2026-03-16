@@ -54,7 +54,7 @@
 }
 
 /* NAV TEXT */
-.nav-text {
+.nav-texte {
   position: absolute;
   right: 70px; 
   color: rgba(139, 0, 0, 1);
@@ -64,12 +64,12 @@
   transition: opacity 0.3s ease;
 }
 
-.nav-text.active {
+.nav-texte.active {
   opacity: 1;
 }
 
 /* MONTRER TEXTE */
-.nav-item .point.active ~ .nav-text {
+.nav-item .point.active ~ .nav-texte {
   opacity: 1;
 }
 
